@@ -1,0 +1,137 @@
+/*int Dictionary::rank_range(int start, int end, int bit)
+{
+	int place=0;
+	do
+	{
+		data_.get(start);
+		if(data_.get(start)==bit){place++;}
+		start++;
+	}while(start!=end+1);
+		return place;
+}*/
+
+
+
+
+
+
+
+
+/*int Dictionary::select_range(int start, int end, int k, int bit)
+{
+	int numCounter=0;
+	int place=0;
+	int myVal=k;
+	for(int j = start; j<=end; j++)
+	{
+		if(numCounter==myVal)
+		{
+			j=1+end;
+		}
+		else if(data_.get(j)==bit)
+		{
+			place=j;
+			numCounter=numCounter+1;
+		}
+	}
+	if(numCounter!=myVal)
+	{
+		return 0;
+	}
+	else
+	{
+		return place;
+	}
+}*/
+
+
+
+
+
+
+
+
+
+
+/*int Dictionary::rank(int end, int bit)
+{
+	int holder2=0;
+	for(int j=0; j<end; j++)
+	{
+		unsigned char myChar=data_.get8(j);
+		if(myChar<0)
+		{
+			myChar+=256;
+			holder2+=lookupTable_[myChar];
+		}
+		else
+		{
+			holder2+=lookupTable_[myChar];	
+		}
+		j+=7;
+	}
+	if(bit!=1)
+	{
+		holder2=data_.length() - holder2;
+	}
+	return holder2;
+}*/
+
+
+
+
+
+
+
+/*int Dictionary::rank(int end, int bit) {
+    return rank_range(0, end, bit);
+}*/
+
+
+
+
+
+
+
+
+
+/*int Dictionary::select(int k, int bit) {
+    int myVal = 0;
+    int location = -1;
+    for (int i = 0; i < data_.length(); i++) {
+        if (data_.get(i) == bit) {
+            myVal=myVal+1;
+            if (myVal == k) {
+                location = i;
+                break;
+            }
+        }
+    }
+
+    if (myVal != k) {
+        std::cout << "Error." << std::endl;
+    }
+
+    return location;
+}*/
+
+
+
+
+
+
+
+int Dictionary::rank(int end, int bit) {
+    int holder2 = 0;
+	    for (int j = 0; j < end; j++) 
+		{
+	        unsigned char myChar = data_.get8(j);
+	        holder2 += lookupTable_[myChar]; //Count the set bits in this byte.
+		}
+	
+    if (bit != 1) {
+        holder2 = end - holder2; //Invert if counting 0s.
+    }
+    return holder2;
+    
+}
