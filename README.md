@@ -8,3 +8,10 @@ Project 2: This project implements the 4 pillars of OOP while also ensuring that
 Project 3: This project requires the implementation of all bit operations. There is also proper memory allocation along with proper bit manipulation.
 
 Project 4: This is an implementation of a doubly-linked-list that is optimized using a two pointer method for proper insertion.
+
+Project 5: This is an implementation of a red-black tree in C++.
+
+Project 6: This project is an implementation of a hashmap that can use linear probing, seperate chaining, quadratic probing, and cukoo hashing.
+
+
+
